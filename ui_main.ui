@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
+    <width>1117</width>
     <height>500</height>
    </rect>
   </property>
@@ -17,28 +17,13 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>SSH Settings</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(45, 45, 45);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
+   <layout class="QVBoxLayout" name="verticalLayout_12">
     <item>
      <widget class="QFrame" name="Top_Bar">
       <property name="maximumSize">
@@ -207,23 +192,8 @@ border: 0px solid;</string>
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
              <item>
-              <widget class="QPushButton" name="btn_page_1">
+              <widget class="QPushButton" name="btn_page_hosts">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -241,12 +211,12 @@ QPushButton:hover {
 }</string>
                </property>
                <property name="text">
-                <string>Page 1</string>
+                <string>Hosts</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_page_2">
+              <widget class="QPushButton" name="btn_page_keys">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -264,12 +234,12 @@ QPushButton:hover {
 }</string>
                </property>
                <property name="text">
-                <string>Page 2</string>
+                <string>Keys</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="btn_page_3">
+              <widget class="QPushButton" name="btn_page_groups">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -287,7 +257,30 @@ QPushButton:hover {
 }</string>
                </property>
                <property name="text">
-                <string>Page 3</string>
+                <string>Groups</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_page_config">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	color: rgb(255, 255, 255);
+	background-color: rgb(35, 35, 35);
+	border: 0px solid;
+}
+QPushButton:hover {
+	background-color: rgb(85, 170, 255);
+}</string>
+               </property>
+               <property name="text">
+                <string>Config</string>
                </property>
               </widget>
              </item>
@@ -309,73 +302,346 @@ QPushButton:hover {
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
-            <widget class="QWidget" name="page_1">
+            <widget class="QWidget" name="page_hosts">
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
-               <widget class="QLabel" name="label_1">
-                <property name="font">
-                 <font>
-                  <pointsize>40</pointsize>
-                 </font>
+               <widget class="QWidget" name="widget_connections" native="true">
+                <property name="autoFillBackground">
+                 <bool>false</bool>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: #FFF;</string>
+                 <string notr="true">QPushButton::hover {background-color : rgb(42, 130, 218);}</string>
                 </property>
-                <property name="text">
-                 <string>PAGE 1</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="label_connections">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>SSH Connections editor. Enter your SSH connection information for automated SSH logins.</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableView" name="tableView_connections"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QPushButton" name="add_rec_connections">
+                     <property name="toolTip">
+                      <string>Add SSH Connection</string>
+                     </property>
+                     <property name="text">
+                      <string>Add Connection</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="remove_rec_connections">
+                     <property name="toolTip">
+                      <string>Remove Selected SSH Connection</string>
+                     </property>
+                     <property name="text">
+                      <string>Remove Connection</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="edit_rec_connections">
+                     <property name="toolTip">
+                      <string>Edit Selected SSH Connection</string>
+                     </property>
+                     <property name="text">
+                      <string>Edit Connection</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QDialogButtonBox" name="buttonBox_connections">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="standardButtons">
+                    <set>QDialogButtonBox::Close|QDialogButtonBox::Save</set>
+                   </property>
+                   <property name="centerButtons">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="ssh_config_path_value">
+                   <property name="mouseTracking">
+                    <bool>true</bool>
+                   </property>
+                   <property name="text">
+                    <string>~/some/path</string>
+                   </property>
+                   <property name="textFormat">
+                    <enum>Qt::RichText</enum>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>false</bool>
+                   </property>
+                   <property name="textInteractionFlags">
+                    <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="ssh_config_path_label">
+                   <property name="text">
+                    <string>SSH config db location :</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_2">
-             <layout class="QVBoxLayout" name="verticalLayout_6">
+            <widget class="QWidget" name="page_keys">
+             <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
-               <widget class="QLabel" name="label_2">
-                <property name="font">
-                 <font>
-                  <pointsize>40</pointsize>
-                 </font>
-                </property>
+               <widget class="QWidget" name="widget_keys" native="true">
                 <property name="styleSheet">
-                 <string notr="true">color: #FFF;</string>
+                 <string notr="true">QPushButton::hover {background-color : rgb(42, 130, 218);}</string>
                 </property>
-                <property name="text">
-                 <string>PAGE 2</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="label_keys_2">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>SSH Key editor. Manage your SSH keys.</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableView" name="tableView_keys"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <item>
+                    <widget class="QPushButton" name="add_rec_keys">
+                     <property name="toolTip">
+                      <string>Add SSH Key</string>
+                     </property>
+                     <property name="text">
+                      <string>Add SSH Key</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="remove_rec_keys">
+                     <property name="toolTip">
+                      <string>Remove Selected SSH Key</string>
+                     </property>
+                     <property name="text">
+                      <string>Remove  SSH Key</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="edit_rec_keys">
+                     <property name="toolTip">
+                      <string>Edit Selected  SSH Key</string>
+                     </property>
+                     <property name="text">
+                      <string>Edit  SSH Key</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QDialogButtonBox" name="buttonBox_keys">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="standardButtons">
+                    <set>QDialogButtonBox::Close|QDialogButtonBox::Save</set>
+                   </property>
+                   <property name="centerButtons">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_3">
+            <widget class="QWidget" name="page_groups">
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item>
-               <widget class="QLabel" name="label">
-                <property name="font">
-                 <font>
-                  <pointsize>40</pointsize>
-                 </font>
-                </property>
+               <widget class="QWidget" name="widget_group" native="true">
                 <property name="styleSheet">
-                 <string notr="true">color: #FFF;</string>
+                 <string notr="true">QPushButton::hover {background-color : rgb(42, 130, 218);}</string>
                 </property>
-                <property name="text">
-                 <string>PAGE 3</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                  <widget class="QLabel" name="label_group">
+                   <property name="font">
+                    <font>
+                     <pointsize>15</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>SSH Group editor. Manage group information.</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableView" name="tableView_group"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QPushButton" name="add_rec_group">
+                     <property name="toolTip">
+                      <string>Add SSH Group</string>
+                     </property>
+                     <property name="text">
+                      <string>Add Group</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="remove_rec_group">
+                     <property name="toolTip">
+                      <string>Remove SSH Group</string>
+                     </property>
+                     <property name="text">
+                      <string>Remove Group</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="edit_rec_group">
+                     <property name="toolTip">
+                      <string>Edit SSH Group</string>
+                     </property>
+                     <property name="text">
+                      <string>Edit Group</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QDialogButtonBox" name="buttonBox_group">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="standardButtons">
+                    <set>QDialogButtonBox::Close|QDialogButtonBox::Save</set>
+                   </property>
+                   <property name="centerButtons">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
+            </widget>
+            <widget class="QWidget" name="page_config">
+             <widget class="QWidget" name="widget_sshconfig" native="true">
+              <property name="geometry">
+               <rect>
+                <x>-10</x>
+                <y>40</y>
+                <width>1018</width>
+                <height>309</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton::hover {background-color : rgb(42, 130, 218);}</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <widget class="QLabel" name="label_sshconfig">
+                 <property name="font">
+                  <font>
+                   <pointsize>15</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>SSH Config editor. Enter your SSH config information in profiles which can be applied to connections or groups.</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTableView" name="tableView_sshconfig"/>
+               </item>
+               <item>
+                <widget class="QDialogButtonBox" name="buttonBox_sshconfig">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="standardButtons">
+                  <set>QDialogButtonBox::Close|QDialogButtonBox::Save</set>
+                 </property>
+                 <property name="centerButtons">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QPushButton" name="add_rec_sshconfig">
+                   <property name="toolTip">
+                    <string>Add SSH Config profile</string>
+                   </property>
+                   <property name="text">
+                    <string>Add SSH Config profile</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="remove_rec_sshconfig">
+                   <property name="toolTip">
+                    <string>Remove SSH Config profile</string>
+                   </property>
+                   <property name="text">
+                    <string>Remove SSH Config profile</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="edit_rec_sshconfig">
+                   <property name="toolTip">
+                    <string>Edit Selected SSH Config Profile</string>
+                   </property>
+                   <property name="text">
+                    <string>Edit SSH Config Profile</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </widget>
           </item>
