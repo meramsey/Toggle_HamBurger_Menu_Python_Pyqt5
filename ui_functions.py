@@ -1,13 +1,16 @@
 ################################################################################
 ##
 ## BY: WANDERSON M.PIMENTA
-## PROJECT MADE WITH: Qt Designer and PySide2
-## V: 1.0.0
+## PROJECT MADE WITH: Qt Designer and PyQt5
+## V: 1.0.1
 ##
 ################################################################################
 
 ## ==> GUI FILE
+from PyQt5.QtCore import QPropertyAnimation
+
 from main import *
+
 
 class UIFunctions(MainWindow):
 
@@ -15,7 +18,7 @@ class UIFunctions(MainWindow):
         if enable:
 
             # GET WIDTH
-            width = self.ui.frame_left_menu.width()
+            width = self.frame_left_menu.width()
             maxExtend = maxWidth
             standard = 70
 
@@ -26,7 +29,7 @@ class UIFunctions(MainWindow):
                 widthExtended = standard
 
             # ANIMATION
-            self.animation = QPropertyAnimation(self.ui.frame_left_menu, b"minimumWidth")
+            self.animation = QPropertyAnimation(self.frame_left_menu, b"minimumWidth")
             self.animation.setDuration(400)
             self.animation.setStartValue(width)
             self.animation.setEndValue(widthExtended)
